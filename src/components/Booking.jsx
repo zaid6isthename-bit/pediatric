@@ -36,7 +36,7 @@ export default function Booking() {
     >
       <div
         ref={ref}
-        className="reveal max-w-4xl mx-auto bg-gradient-to-br from-coral to-[#FB8B74] rounded-4xl p-10 md:p-16 text-center shadow-coral relative overflow-hidden"
+        className="reveal max-w-4xl mx-auto bg-gradient-to-br from-coral to-[#FB8B74] rounded-4xl px-4 py-10 sm:p-10 md:p-16 text-center shadow-coral relative overflow-hidden"
       >
         {/* Background decoration */}
         <div
@@ -65,7 +65,7 @@ export default function Booking() {
 
             <form
               onSubmit={handleSubmit}
-              className="bg-white rounded-3xl p-6 md:p-8 text-left grid sm:grid-cols-2 gap-4"
+              className="bg-white rounded-3xl p-5 sm:p-6 md:p-8 text-left grid sm:grid-cols-2 gap-4"
               aria-label="Appointment booking form"
             >
               <div className="flex flex-col gap-1.5">
@@ -80,7 +80,7 @@ export default function Booking() {
                   value={form.childName}
                   onChange={handleChange}
                   required
-                  className="border border-slate-divider rounded-xl px-4 py-3 text-slate-primary placeholder:text-slate-secondary/50 focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
+                  className="w-full border border-slate-divider rounded-xl px-4 py-3 text-slate-primary placeholder:text-slate-secondary/50 focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
                 />
               </div>
 
@@ -96,7 +96,7 @@ export default function Booking() {
                   value={form.phone}
                   onChange={handleChange}
                   required
-                  className="border border-slate-divider rounded-xl px-4 py-3 text-slate-primary placeholder:text-slate-secondary/50 focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
+                  className="w-full border border-slate-divider rounded-xl px-4 py-3 text-slate-primary placeholder:text-slate-secondary/50 focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
                 />
               </div>
 
@@ -110,7 +110,7 @@ export default function Booking() {
                   value={form.doctor}
                   onChange={handleChange}
                   required
-                  className="border border-slate-divider rounded-xl px-4 py-3 text-slate-primary focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition appearance-none bg-white"
+                  className="w-full border border-slate-divider rounded-xl px-4 py-3 text-slate-primary focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition appearance-none bg-white"
                 >
                   <option value="" disabled>Choose a specialist</option>
                   {doctors.map((d) => (
@@ -131,7 +131,7 @@ export default function Booking() {
                   onChange={handleChange}
                   min={new Date().toISOString().split('T')[0]}
                   required
-                  className="border border-slate-divider rounded-xl px-4 py-3 text-slate-primary focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
+                  className="w-full border border-slate-divider rounded-xl px-4 py-3 text-slate-primary focus:outline-none focus:ring-2 focus:ring-coral/40 focus:border-coral transition"
                 />
               </div>
 
