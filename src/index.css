@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+    background-color: #FDFAF6;
+    color: #1E293B;
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .btn-coral {
+    @apply bg-coral text-white font-semibold px-6 py-3 rounded-pill
+           hover:bg-coral-dark active:scale-95
+           transition-all duration-200 ease-out
+           shadow-coral hover:shadow-none;
+  }
+
+  .btn-outline {
+    @apply border-2 border-sky-deep text-sky-deep font-semibold px-6 py-3 rounded-pill
+           hover:bg-sky-bloom
+           transition-all duration-200 ease-out;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-slate-primary leading-tight;
+  }
+
+  .section-sub {
+    @apply text-slate-secondary text-lg mt-3 leading-relaxed;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-card p-6
+           hover:-translate-y-1 hover:shadow-card-hover
+           transition-all duration-300 ease-out;
+  }
+
+  .pill-badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-pill text-sm font-semibold;
+  }
+}
+
+/* Scroll reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > *:nth-child(1) { transition-delay: 0ms; }
+.stagger > *:nth-child(2) { transition-delay: 100ms; }
+.stagger > *:nth-child(3) { transition-delay: 200ms; }
+.stagger > *:nth-child(4) { transition-delay: 300ms; }
+.stagger > *:nth-child(5) { transition-delay: 400ms; }
+.stagger > *:nth-child(6) { transition-delay: 500ms; }
+
+/* Blob shape */
+.blob {
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FDFAF6; }
+::-webkit-scrollbar-thumb { background: #DBEAFE; border-radius: 999px; }
