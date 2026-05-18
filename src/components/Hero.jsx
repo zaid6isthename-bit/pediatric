@@ -16,15 +16,22 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen bg-cream-100 flex items-center overflow-hidden pt-20"
     >
-      {/* Background Blob */}
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src="/hero-bg.png"
+          alt=""
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream-100 via-transparent to-transparent" />
+      </div>
+
+      {/* Decorative Blur Blobs */}
       <div
-        className="absolute top-[-80px] right-[-120px] w-[560px] h-[560px] bg-sky-bloom opacity-60 blob pointer-events-none"
+        className="absolute top-[-80px] right-[-120px] w-[560px] h-[560px] bg-sky-bloom opacity-40 blob pointer-events-none z-10"
         aria-hidden="true"
       />
-      <div
-        className="absolute bottom-[-60px] left-[-80px] w-[360px] h-[360px] bg-coral-light opacity-30 blob pointer-events-none"
-        aria-hidden="true"
-      />
+
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20 grid lg:grid-cols-2 gap-16 items-center">
         {/* LEFT CONTENT */}
@@ -84,20 +91,13 @@ export default function Hero() {
 
         {/* RIGHT — Photo placeholder + floating cards */}
         <div className="relative flex justify-center">
-          {/* Main image placeholder */}
-          <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-card">
-            <div className="absolute inset-0 bg-gradient-to-br from-sky-bloom via-white to-coral-light flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-24 h-24 bg-coral-light rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-4xl">👶</span>
-                </div>
-                <p className="text-slate-secondary font-medium text-sm leading-relaxed">
-                  Warm, candid moments of<br />
-                  care between our doctors<br />
-                  and your little ones
-                </p>
-              </div>
-            </div>
+          {/* Main feature image */}
+          <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-card border border-slate-divider/50 z-10">
+            <img
+              src="/hero-feature.png"
+              alt="Candid moment of care between pediatrician and a happy child at Bloom Pediatrics"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+            />
           </div>
 
           {/* Floating review card */}
